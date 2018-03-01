@@ -39,14 +39,10 @@ def main():
             for linea in archivo:
                 matriz.append(linea.strip().split())
             archivo.close()
-            w = open("./files/matrizCliente", 'r+',encoding='utf-8')
-            matrizInv=inv(matriz) 
-            w.write(str(matrizInv))
-            w.write('\n')
+            matrizInv=inv(matriz)
             s.send_json({"files": str(matrizInv)})
         else:
             print("Unsupported action!")
 
 if __name__ == '__main__':
     main()
-
